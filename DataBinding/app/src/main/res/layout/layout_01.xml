@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 1. So với cái cũ add thêm tab <layout> và tab <data> -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Tên biến đặt tuỳ ý-->
+    <data>
+        <variable name="user"
+            type="android.fiot.databinding.Activity01.User"/>
+
+        <variable
+            name="log"
+            type="StringBuilder" />
+    </data>
+
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="android.fiot.databinding.Activity01">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{user.name}" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{String.format("name = %s", user.name)}' />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='@{`name = ` + user.name + `, age = ` + user.age}' />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{log}"/>
+
+
+</LinearLayout>
+
+</layout>
